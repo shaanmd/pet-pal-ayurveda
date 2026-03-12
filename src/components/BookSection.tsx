@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function BookSection() {
@@ -11,44 +12,13 @@ export function BookSection() {
             <div className="relative">
               {/* Shadow beneath book */}
               <div className="absolute -bottom-4 left-1/2 h-8 w-4/5 -translate-x-1/2 rounded-full bg-black/20 blur-xl" />
-              <Image src="/book-cover.jpg" alt="PetPal Ayurveda book cover" width={320} height={460} />
-              <div
-                className="relative flex h-[400px] w-[280px] flex-col items-center justify-between overflow-hidden rounded-lg p-8 shadow-[0_24px_64px_rgba(0,0,0,0.22)] sm:h-[460px] sm:w-[320px]"
-                style={{
-                  background: "linear-gradient(160deg, #1a3d2e 0%, #2d5a4a 40%, #3d7a60 70%, #c8a96a 100%)",
-                }}
-                aria-label="PetPal Ayurveda book cover placeholder"
-              >
-                {/* Top botanical band */}
-                <div className="flex w-full justify-between text-3xl opacity-60">
-                  <span>🌿</span><span>✦</span><span>🪷</span>
-                </div>
-
-                {/* Title block */}
-                <div className="text-center">
-                  <p className="text-xs font-medium uppercase tracking-[0.3em]" style={{ color: "rgba(200,169,106,0.9)" }}>
-                    Ayurvedic Pet Care
-                  </p>
-                  <h3
-                    className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold leading-tight sm:text-4xl"
-                    style={{ color: "#faf8f5" }}
-                  >
-                    PetPal<br />Ayurveda
-                  </h3>
-                  <div className="mx-auto mt-3 h-px w-16" style={{ backgroundColor: "rgba(200,169,106,0.6)" }} />
-                  <p className="mt-3 text-xs leading-relaxed" style={{ color: "rgba(250,248,245,0.7)" }}>
-                    Ancient wisdom for<br />modern pet wellbeing
-                  </p>
-                </div>
-
-                {/* Central motif */}
-                <div className="text-6xl opacity-80">🐾</div>
-
-                {/* Authors */}
-                <div className="w-full border-t pt-4 text-center text-xs" style={{ borderColor: "rgba(200,169,106,0.3)", color: "rgba(250,248,245,0.65)" }}>
-                  Dr Shaan Mocke · Kamal Kaur · Dr Shagufta Singh
-                </div>
-              </div>
+              <Image
+                src="/book-cover.jpg"
+                alt="PetPal Ayurveda book cover"
+                width={320}
+                height={460}
+                className="rounded-lg shadow-[0_24px_64px_rgba(0,0,0,0.22)]"
+              />
             </div>
           </div>
 
