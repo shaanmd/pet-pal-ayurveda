@@ -11,7 +11,7 @@ export function BookSection() {
             <div className="relative">
               {/* Shadow beneath book */}
               <div className="absolute -bottom-4 left-1/2 h-8 w-4/5 -translate-x-1/2 rounded-full bg-black/20 blur-xl" />
-              {/* Book cover placeholder — replace src with generated image */}
+              <Image src="/book-cover.jpg" alt="PetPal Ayurveda book cover" width={320} height={460} />
               <div
                 className="relative flex h-[400px] w-[280px] flex-col items-center justify-between overflow-hidden rounded-lg p-8 shadow-[0_24px_64px_rgba(0,0,0,0.22)] sm:h-[460px] sm:w-[320px]"
                 style={{
