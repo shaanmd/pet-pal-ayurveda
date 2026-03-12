@@ -28,20 +28,20 @@ export function ExpertCard({
       {/* Avatar */}
       {imageSrc ? (
         <div
-          className="mb-5 h-14 w-14 overflow-hidden rounded-full"
+          className="mb-5 h-40 w-40 overflow-hidden rounded-full"
           style={{ outline: `2px solid ${color}40` }}
         >
           <Image
             src={imageSrc}
             alt={name}
-            width={56}
-            height={56}
+            width={160}
+            height={160}
             className="h-full w-full object-cover object-top"
           />
         </div>
       ) : (
         <div
-          className="mb-5 flex h-14 w-14 items-center justify-center rounded-full font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--primary-foreground)]"
+          className="mb-5 flex h-40 w-40 items-center justify-center rounded-full font-[family-name:var(--font-display)] text-4xl font-semibold text-[var(--primary-foreground)]"
           style={{ backgroundColor: color }}
           aria-hidden="true"
         >
