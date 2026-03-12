@@ -1,13 +1,14 @@
 -- PetPal Ayurveda: Initial schema
+-- All tables are prefixed with petpal_ to avoid clashes in a shared Supabase project.
 -- Run this in Supabase SQL Editor or via `supabase db push`
 
 -- Enable UUID extension
 create extension if not exists "pgcrypto";
 
 -- ---------------------------------------------------------------------------
--- quiz_results: one row per completed quiz submission
+-- petpal_quiz_results: one row per completed quiz submission
 -- ---------------------------------------------------------------------------
-create table if not exists quiz_results (
+create table if not exists petpal_quiz_results (
   id           uuid primary key default gen_random_uuid(),
   created_at   timestamptz not null default now(),
   email        text not null,
@@ -19,24 +20,24 @@ create table if not exists quiz_results (
 );
 
 -- Index for quick lookup by email
-create index if not exists quiz_results_email_idx on quiz_results (email);
+create index if not exists petpal_quiz_results_email_idx on petpal_quiz_results (email);
 
--- Row-level security: only service role can read/write
-alter table quiz_results enable row level security;
+-- Row-level security
+alter table petpal_quiz_results enable row level security;
 
 -- Allow anonymous INSERT (quiz submissions)
-create policy "Allow anonymous insert" on quiz_results
+create policy "petpal: allow anonymous insert" on petpal_quiz_results
   for insert with check (true);
 
--- Only authenticated users (admin) can SELECT
-create policy "Allow service role select" on quiz_results
+-- Only service role can SELECT
+create policy "petpal: allow service role select" on petpal_quiz_results
   for select using (auth.role() = 'service_role');
 
 
 -- ---------------------------------------------------------------------------
--- dosha_tips: dynamic per-dosha content (optional — can stay in code)
+-- petpal_dosha_tips: dynamic per-dosha content (optional — can stay in code)
 -- ---------------------------------------------------------------------------
-create table if not exists dosha_tips (
+create table if not exists petpal_dosha_tips (
   id          uuid primary key default gen_random_uuid(),
   dosha       text not null check (dosha in ('vata', 'pitta', 'kapha')),
   title       text not null,
@@ -49,7 +50,7 @@ create table if not exists dosha_tips (
 );
 
 -- Seed with initial content
-insert into dosha_tips (dosha, title, subtitle, description, massage_tips, diet_tips, herb_tips) values
+insert into petpal_dosha_tips (dosha, title, subtitle, description, massage_tips, diet_tips, herb_tips) values
 (
   'vata',
   'Your pet is Vata-dominant',

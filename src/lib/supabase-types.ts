@@ -1,6 +1,6 @@
 /**
  * Supabase types for PetPal Ayurveda.
- * Create a table `quiz_results` with columns matching this type,
+ * Create a table `petpal_quiz_results` with columns matching this type,
  * then use the optional API route or server action to persist results.
  */
 
