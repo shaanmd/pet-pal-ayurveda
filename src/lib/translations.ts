@@ -90,7 +90,7 @@ export const t = {
       en: "Our comprehensive digital guide to Ayurvedic pet care and massage is coming to Australia, New Zealand, and India. Pre-order now for early-bird pricing and exclusive content.",
       hi: "आयुर्वेदिक पेट रिहैबिलिटेशन और मालिश की हमारी व्यापक मार्गदर्शिका ऑस्ट्रेलिया, न्यूज़ीलैंड और भारत में आ रही है। अर्ली-बर्ड मूल्य और विशेष सामग्री के लिए वेटलिस्ट में शामिल हों।",
     },
-    //placeholder: { en: "Enter your email address", hi: "अपना ईमेल पता दर्ज करें" },
+    placeholder: { en: "Enter your email address", hi: "अपना ईमेल पता दर्ज करें" },
     cta: { en: "Secure My Copy", hi: "वेटलिस्ट में शामिल हों" },
     success: { en: "You're on the list! 🎉", hi: "आप सूची में हैं! 🎉" },
     successSub: { en: "We'll be in touch when the book is ready.", hi: "किताब तैयार होने पर हम संपर्क करेंगे।" },
