@@ -48,7 +48,7 @@ export function Hero() {
         <div className="animate-fade-up animate-fade-up-delay-4 mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[var(--muted)]">
           <span className="flex items-center gap-1.5">
             <span aria-hidden="true" className="text-[var(--primary)]">✓</span>
-            Free — no signup required
+            Free quizz results
           </span>
           <span className="flex items-center gap-1.5">
             <span aria-hidden="true" className="text-[var(--primary)]">✓</span>

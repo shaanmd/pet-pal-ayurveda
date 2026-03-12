@@ -107,9 +107,17 @@ function EmailCaptureStep({
     if (!email.trim()) return;
     setStatus("loading");
     try {
-      // Optional: send to Supabase or Systeme.io webhook here
-      // await saveQuizResult({ email, primaryDosha, scores });
-      await new Promise((r) => setTimeout(r, 600)); // simulate
+      await fetch("/api/quiz-result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          primaryDosha,
+          vataScore: scores.vata,
+          pittaScore: scores.pitta,
+          kaphaScore: scores.kapha,
+        }),
+      });
       setStatus("done");
       window.location.href = `/quiz/result?d=${primaryDosha}&email=${encodeURIComponent(email)}`;
     } catch {

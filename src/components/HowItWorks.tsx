@@ -4,21 +4,21 @@ const steps = [
     icon: "🐾",
     title: "Discover your pet's Dosha",
     description:
-      "Answer a short quiz about your pet's body type, temperament, and habits. We'll identify whether they are Vata, Pitta, or Kapha — the three Ayurvedic constitutions.",
+      "Answer a short quiz about your pet's body type, temperament, and habits. We'll identify whether they are Vata, Pitta, or Kapha: the three Ayurvedic constitutions.",
   },
   {
     number: "02",
     icon: "🌿",
     title: "Get personalised care tips",
     description:
-      "Receive tailored Ayurvedic massage techniques, dietary guidance, and herbal recommendations matched to your pet's unique constitution.",
+      "Receive guidelines matched to your pet's unique constitution.",
   },
   {
     number: "03",
     icon: "✨",
     title: "Support whole-being wellness",
     description:
-      "Apply gentle, home-based practices rooted in 5,000 years of Ayurvedic wisdom. Track improvements and join our community of holistic pet owners.",
+      "Apply gentle, home-based practices rooted in 5,000 years of Ayurvedic wisdom.",
   },
 ];
 
