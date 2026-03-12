@@ -1,66 +1,50 @@
-const steps = [
-  {
-    number: "01",
-    icon: "🐾",
-    title: "Discover your pet's Dosha",
-    description:
-      "Answer a short quiz about your pet's body type, temperament, and habits. We'll identify whether they are Vata, Pitta, or Kapha: the three Ayurvedic constitutions.",
-  },
-  {
-    number: "02",
-    icon: "🌿",
-    title: "Get personalised care tips",
-    description:
-      "Receive guidelines matched to your pet's unique constitution.",
-  },
-  {
-    number: "03",
-    icon: "✨",
-    title: "Support whole-being wellness",
-    description:
-      "Apply gentle, home-based practices rooted in 5,000 years of Ayurvedic wisdom.",
-  },
-];
+"use client";
+
+import { useLang } from "./LanguageProvider";
+import { t, tx } from "@/lib/translations";
+
+const icons = ["🐾", "🌿", "✨"];
+const numbers = ["01", "02", "03"];
 
 export function HowItWorks() {
+  const { lang } = useLang();
+
   return (
     <section className="bg-[var(--card)] px-6 py-20 sm:px-8 md:px-12 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--primary)]">
-            How it works
+            {tx(t.howItWorks.eyebrow, lang)}
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
-            Ancient wisdom, three simple steps
+            {tx(t.howItWorks.heading, lang)}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-[var(--muted)]">
-            Start with the free quiz and get
-            results in under five minutes.
+            {tx(t.howItWorks.sub, lang)}
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-3 sm:gap-8">
-          {steps.map((step) => (
-            <div key={step.number} className="relative flex flex-col items-start">
-              {/* Step number accent */}
+          {t.howItWorks.steps.map((step, i) => (
+            <div key={i} className="relative flex flex-col items-start">
               <span
                 className="mb-4 font-[family-name:var(--font-display)] text-4xl font-bold leading-none sm:text-5xl"
                 style={{ color: "var(--card-border)" }}
                 aria-hidden="true"
               >
-                {step.number}
+                {numbers[i]}
               </span>
               <div
                 className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl text-2xl"
                 style={{ backgroundColor: "var(--background)" }}
                 aria-hidden="true"
               >
-                {step.icon}
+                {icons[i]}
               </div>
               <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]">
-                {step.title}
+                {tx(step.title, lang)}
               </h3>
-              <p className="mt-2 text-[var(--muted)]">{step.description}</p>
+              <p className="mt-2 text-[var(--muted)]">{tx(step.description, lang)}</p>
             </div>
           ))}
         </div>

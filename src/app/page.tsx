@@ -4,11 +4,12 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { ExpertsSection } from "@/components/ExpertsSection";
 import { BookSection } from "@/components/BookSection";
 import { WaitlistSection } from "@/components/WaitlistSection";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
+    <LanguageProvider>
       <Nav />
       <main>
         <Hero />
@@ -49,6 +50,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </>
+    </LanguageProvider>
   );
 }

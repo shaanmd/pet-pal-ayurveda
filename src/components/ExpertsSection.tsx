@@ -1,6 +1,12 @@
+"use client";
+
 import { ExpertCard } from "./ExpertCard";
+import { useLang } from "./LanguageProvider";
+import { t, tx } from "@/lib/translations";
 
 export function ExpertsSection() {
+  const { lang } = useLang();
+
   return (
     <section
       id="experts"
@@ -9,60 +15,27 @@ export function ExpertsSection() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--primary)]">
-            The team
+            {tx(t.experts.eyebrow, lang)}
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
-            Meet the authors behind PetPal Ayurveda
+            {tx(t.experts.heading, lang)}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-[var(--muted)]">
-            A unique blend of veterinary science, holistic practice, and ancient
-            Ayurvedic wisdom for your pet&apos;s wellbeing.
+            {tx(t.experts.sub, lang)}
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <ExpertCard
-            name="Dr Shaan Mocke"
-            title="Author & Veterinarian."
-            initials="SM"
-            imageSrc="/dr-shaan-mocke.jpg"
-            accent="primary"
-          >
-            <p>
-              Dr Shaan brings veterinary expertise and a passion for integrating
-              natural methods into pet rehabilitation and massage. Her
-              upcoming book will guide pet owners in Australia, New Zealand, and
-              India toward safe, home-based care rooted in ancient wisdom.
-            </p>
+          <ExpertCard name="Dr Shaan Mocke" title="Author & Veterinarian." initials="SM" imageSrc="/dr-shaan-mocke.jpg" accent="primary">
+            <p>{tx(t.experts.shaan, lang)}</p>
           </ExpertCard>
 
-          <ExpertCard
-            name="Kamal Kaur"
-            title="Ayurvedic Animal Naturopath"
-            initials="KK"
-            imageSrc="/kamal-kaur.jpg"
-            accent="accent"
-          >
-            <p>
-              Founder of Seva Holistic Healing, Kamal brings over 20 years of
-              experience in Ayurveda, herbal medicine, naturopathy, and Reiki.
-              As a certified Reiki Grandmaster, she combines ancient wisdom with
-              modern approaches to support whole-being wellness.
-            </p>
+          <ExpertCard name="Kamal Kaur" title="Ayurvedic Animal Naturopath" initials="KK" imageSrc="/kamal-kaur.jpg" accent="accent">
+            <p>{tx(t.experts.kamal, lang)}</p>
           </ExpertCard>
 
-          <ExpertCard
-            name="Dr. Shagufta Singh"
-            title="Author & Veterinarian."
-            initials="SS"
-            imageSrc="/dr-shagufta-singh.jpg"
-            accent="primary"
-          >
-            <p>
-              Dr Shagufta bridges conventional veterinary medicine with holistic
-              approaches. Her perspective ensures that Ayurvedic pet care is both
-              evidence-aware and deeply nurturing for animals and their families.
-            </p>
+          <ExpertCard name="Dr. Shagufta Singh" title="Author & Veterinarian." initials="SS" imageSrc="/dr-shagufta-singh.jpg" accent="primary">
+            <p>{tx(t.experts.shagufta, lang)}</p>
           </ExpertCard>
         </div>
       </div>
