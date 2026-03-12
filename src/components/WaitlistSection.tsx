@@ -50,36 +50,38 @@ export function WaitlistSection() {
             </p>
           </div>
         ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-2"
-            noValidate
-          >
-            <label htmlFor="waitlist-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="waitlist-email"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              className="h-12 flex-1 rounded-[var(--radius)] border border-transparent bg-white/15 px-4 text-[var(--primary-foreground)] placeholder:text-white/50 focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/30"
-              aria-describedby={status === "error" ? "waitlist-error" : undefined}
-            />
-            <button
-              type="submit"
-              className="inline-flex h-12 w-full items-center justify-center rounded-[var(--radius)] bg-[var(--accent)] px-6 font-semibold text-white shadow-[var(--shadow)] transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--primary)] sm:w-auto"
+          <div className="mt-8 rounded-2xl bg-white/10 p-2 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-sm ring-1 ring-white/20 sm:p-3">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-2 sm:flex-row"
+              noValidate
             >
-              Join the waitlist
-            </button>
+              <label htmlFor="waitlist-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="waitlist-email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                className="h-13 flex-1 rounded-xl border-0 bg-white px-5 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+                aria-describedby={status === "error" ? "waitlist-error" : undefined}
+              />
+              <button
+                type="submit"
+                className="inline-flex h-13 w-full items-center justify-center rounded-xl bg-[var(--accent)] px-7 text-base font-semibold text-white shadow-lg transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--primary)] sm:w-auto"
+              >
+                Join the waitlist
+              </button>
+            </form>
             {status === "error" && (
-              <p id="waitlist-error" className="mt-2 text-sm text-red-200" role="alert">
+              <p id="waitlist-error" className="mt-2 px-2 text-sm text-red-200" role="alert">
                 Something went wrong. Please try again.
               </p>
             )}
-          </form>
+          </div>
         )}
 
         <p className="mt-4 text-xs" style={{ color: "rgba(250,248,245,0.5)" }}>

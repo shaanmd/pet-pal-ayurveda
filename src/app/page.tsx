@@ -2,6 +2,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { ExpertsSection } from "@/components/ExpertsSection";
+import { BookSection } from "@/components/BookSection";
 import { WaitlistSection } from "@/components/WaitlistSection";
 import Link from "next/link";
 
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <HowItWorks />
         <ExpertsSection />
+        <BookSection />
         <WaitlistSection />
       </main>
       <footer className="border-t border-[var(--card-border)] bg-[var(--card)] px-6 py-12 sm:px-8">
