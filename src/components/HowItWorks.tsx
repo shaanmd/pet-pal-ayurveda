@@ -39,12 +39,12 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-3 sm:gap-8">
           {steps.map((step) => (
             <div key={step.number} className="relative flex flex-col items-start">
               {/* Step number accent */}
               <span
-                className="mb-4 font-[family-name:var(--font-display)] text-5xl font-bold leading-none"
+                className="mb-4 font-[family-name:var(--font-display)] text-4xl font-bold leading-none sm:text-5xl"
                 style={{ color: "var(--card-border)" }}
                 aria-hidden="true"
               >

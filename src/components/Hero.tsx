@@ -19,33 +19,33 @@ export function Hero() {
           Ancient wisdom for modern pets
         </p>
 
-        <h1 className="animate-fade-up animate-fade-up-delay-1 mt-4 font-[family-name:var(--font-display)] text-4xl font-semibold leading-[1.15] text-[var(--foreground)] sm:text-5xl md:text-6xl">
+        <h1 className="animate-fade-up animate-fade-up-delay-1 mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold leading-[1.15] text-[var(--foreground)] sm:text-5xl md:text-6xl">
           Unlock Your Pet&apos;s Ancient Path to Healing
         </h1>
 
-        <p className="animate-fade-up animate-fade-up-delay-2 mx-auto mt-6 max-w-2xl text-lg text-[var(--muted)] sm:text-xl">
+        <p className="animate-fade-up animate-fade-up-delay-2 mx-auto mt-6 max-w-2xl text-base text-[var(--muted)] sm:text-xl">
           Discover your pet&apos;s Dosha with our free quiz. Bound by 5,000 years
           of Indian healing tradition.
         </p>
 
         {/* CTA buttons */}
-        <div className="animate-fade-up animate-fade-up-delay-3 mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="animate-fade-up animate-fade-up-delay-3 mt-10 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-center">
           <Link
             href="/quiz"
-            className="inline-flex h-12 min-w-[200px] items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-6 font-semibold text-[var(--primary-foreground)] shadow-[var(--shadow)] transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2"
+            className="inline-flex h-12 w-full items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-6 font-semibold text-[var(--primary-foreground)] shadow-[var(--shadow)] transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 sm:w-auto"
           >
             Take the free Pet Dosha Quiz
           </Link>
           <a
             href="#experts"
-            className="inline-flex h-12 items-center justify-center rounded-[var(--radius)] border-2 border-[var(--card-border)] bg-[var(--card)] px-6 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)] hover:bg-[var(--background)]"
+            className="inline-flex h-12 w-full items-center justify-center rounded-[var(--radius)] border-2 border-[var(--card-border)] bg-[var(--card)] px-6 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)] hover:bg-[var(--background)] sm:w-auto"
           >
             Meet the authors
           </a>
         </div>
 
         {/* Trust badges */}
-        <div className="animate-fade-up animate-fade-up-delay-4 mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[var(--muted)]">
+        <div className="animate-fade-up animate-fade-up-delay-4 mt-8 flex flex-col items-center gap-2 text-sm text-[var(--muted)] sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-6 sm:gap-y-2">
           <span className="flex items-center gap-1.5">
             <span aria-hidden="true" className="text-[var(--primary)]">✓</span>
             Free quizz results

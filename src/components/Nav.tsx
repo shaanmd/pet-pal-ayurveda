@@ -49,7 +49,7 @@ export function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="flex h-9 w-9 items-center justify-center rounded-[var(--radius)] border border-[var(--card-border)] sm:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-[var(--radius)] border border-[var(--card-border)] sm:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}

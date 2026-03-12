@@ -6,7 +6,7 @@ export function WaitlistSection() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email) return;
     // TODO: wire up to real endpoint (e.g. Supabase, Mailchimp, Resend)
@@ -70,7 +70,7 @@ export function WaitlistSection() {
             />
             <button
               type="submit"
-              className="inline-flex h-12 items-center justify-center rounded-[var(--radius)] bg-[var(--accent)] px-6 font-semibold text-white shadow-[var(--shadow)] transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--primary)]"
+              className="inline-flex h-12 w-full items-center justify-center rounded-[var(--radius)] bg-[var(--accent)] px-6 font-semibold text-white shadow-[var(--shadow)] transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--primary)] sm:w-auto"
             >
               Join the waitlist
             </button>
