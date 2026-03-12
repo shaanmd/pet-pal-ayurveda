@@ -68,3 +68,17 @@ body {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-up-delay-1,
+  .animate-fade-up-delay-2,
+  .animate-fade-up-delay-3,
+  .animate-fade-up-delay-4,
+  .animate-fade-up-delay-5 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

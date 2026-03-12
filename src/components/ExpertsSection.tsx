@@ -7,41 +7,40 @@ export function ExpertsSection() {
       className="scroll-mt-20 bg-[var(--background)] px-6 py-20 sm:px-8 md:px-12 lg:px-16"
     >
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
-          Meet the experts behind PetPal Ayurveda
-        </h2>
-        <p className="mt-3 max-w-2xl text-[var(--muted)]">
-          A unique blend of veterinary science, holistic practice, and ancient
-          Ayurvedic wisdom for your pet&apos;s wellbeing.
-        </p>
+        <div className="text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--primary)]">
+            The team
+          </p>
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
+            Meet the authors behind PetPal Ayurveda
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-[var(--muted)]">
+            A unique blend of veterinary science, holistic practice, and ancient
+            Ayurvedic wisdom for your pet&apos;s wellbeing.
+          </p>
+        </div>
+
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <ExpertCard
             name="Dr Shaan Mocke"
-            title="Veterinary lead & author"
+            title="Author & Veterinarian."
+            initials="SM"
+            imageSrc="/dr-shaan-mocke.jpg"
             accent="primary"
           >
             <p>
-              You bring veterinary expertise and a passion for integrating
-              natural, Ayurvedic methods into pet rehabilitation and massage.
-              Your upcoming book will guide pet owners in Australia, New Zealand,
-              and India toward safe, home-based care rooted in ancient wisdom.
+              Dr Shaan brings veterinary expertise and a passion for integrating
+              natural methods into pet rehabilitation and massage. Her
+              upcoming book will guide pet owners in Australia, New Zealand, and
+              India toward safe, home-based care rooted in ancient wisdom.
             </p>
           </ExpertCard>
+
           <ExpertCard
-            name="Dr. Shagufta Singh"
-            title="The Holistic Vet"
-            accent="primary"
-          >
-            <p>
-              The Holistic Vet bridges conventional veterinary medicine with
-              holistic approaches. Her perspective ensures that Ayurvedic pet
-              care is both evidence-aware and deeply nurturing for animals and
-              their families.
-            </p>
-          </ExpertCard>
-          <ExpertCard
-            name="Kamal"
-            title="Ayurvedic Animal Naturopath — the Lore expert"
+            name="Kamal Kaur"
+            title="Ayurvedic Animal Naturopath"
+            initials="KK"
+            imageSrc="/kamal-kaur.jpg"
             accent="accent"
           >
             <p>
@@ -50,11 +49,19 @@ export function ExpertsSection() {
               As a certified Reiki Grandmaster, she combines ancient wisdom with
               modern approaches to support whole-being wellness.
             </p>
-            <p className="mt-3">
-              At Seva, healing is a way of life. Kamal designs personalised
-              therapies rooted in Ayurvedic principles to address the root
-              cause of health concerns—whether physical, emotional, or
-              spiritual—and guides clients toward balance and lasting vitality.
+          </ExpertCard>
+
+          <ExpertCard
+            name="Dr. Shagufta Singh"
+            title="Author & Veterinarian."
+            initials="SS"
+            imageSrc="/dr-shagufta-singh.jpg"
+            accent="primary"
+          >
+            <p>
+              Dr Shagufta bridges conventional veterinary medicine with holistic
+              approaches. Her perspective ensures that Ayurvedic pet care is both
+              evidence-aware and deeply nurturing for animals and their families.
             </p>
           </ExpertCard>
         </div>
