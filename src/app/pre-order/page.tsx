@@ -156,33 +156,14 @@ function PreOrderContent() {
         <section className="px-6 pb-16 sm:px-8 md:px-12">
           <div className="mx-auto max-w-3xl">
             <div className="overflow-hidden rounded-[var(--radius-lg)] border-2 border-[var(--card-border)] bg-[var(--card)] shadow-[var(--shadow-lg)]">
-              {/* YouTube embed placeholder — replace YOUR_VIDEO_ID with actual ID */}
-              <div className="relative aspect-video w-full bg-gray-100">
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[var(--muted)]">
-                  <svg
-                    width="64"
-                    height="64"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-[var(--primary)] opacity-60"
-                  >
-                    <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" opacity="0.2" />
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                  <p className="text-sm font-medium">{tx(t.preOrder.videoPlaceholder, lang)}</p>
-                </div>
-                {/*
-                  When your YouTube video is ready, replace the placeholder div above with:
-                  <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                    title="PetPal Ayurveda book trailer"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                */}
+              <div className="relative aspect-video w-full">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/OiaKTCOyQiw"
+                  title="PetPal Ayurveda book trailer"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
