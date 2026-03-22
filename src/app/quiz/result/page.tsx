@@ -98,6 +98,21 @@ export default async function QuizResultPage({ searchParams }: Props) {
             </p>
           </section>
 
+          {/* Imbalances */}
+          <section className="mt-8 rounded-[var(--radius)] border border-[var(--card-border)] bg-[var(--background)] p-4">
+            <h2 className="font-[family-name:var(--font-display)] text-base font-semibold text-[var(--foreground)]">
+              Signs of imbalance to watch for
+            </h2>
+            <ul className="mt-3 space-y-1">
+              {content.commonImbalances.map((item, i) => (
+                <li key={i} className="flex gap-2 text-sm text-[var(--muted)]">
+                  <span className="mt-0.5 shrink-0 text-orange-400">⚠</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <p className="mt-10 text-sm text-[var(--muted)]">
             Check your inbox — we&apos;ll share more about our upcoming book and
             natural pet care support.
