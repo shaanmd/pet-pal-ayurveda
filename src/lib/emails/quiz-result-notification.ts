@@ -1,12 +1,18 @@
 /** HTML email sent to vet@amvn.com.au when someone completes the Dosha quiz. */
 export function quizResultNotificationHtml({
   email,
+  ownerName,
+  petName,
+  species,
   primaryDosha,
   vataScore,
   pittaScore,
   kaphaScore,
 }: {
   email: string;
+  ownerName: string;
+  petName: string;
+  species: string;
   primaryDosha: string;
   vataScore: number;
   pittaScore: number;
@@ -14,6 +20,14 @@ export function quizResultNotificationHtml({
 }) {
   const doshaEmoji =
     primaryDosha === "vata" ? "🌬️" : primaryDosha === "pitta" ? "🔥" : "🌊";
+
+  const speciesLabels: Record<string, string> = {
+    dog: "Dog",
+    cat: "Cat",
+    horse: "Horse",
+    bird: "Bird",
+    "pocket-pet": "Pocket Pet",
+  };
 
   return `
 <!DOCTYPE html>
@@ -35,14 +49,26 @@ export function quizResultNotificationHtml({
         <tr>
           <td style="padding:32px 40px;">
             <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#2c2419;">
-              Someone just completed the <strong>PetPal Ayurveda</strong> Dosha quiz.
+              <strong>${ownerName || "Someone"}</strong> just completed the <strong>PetPal Ayurveda</strong> Dosha quiz for their ${speciesLabels[species] || "pet"}, <strong>${petName || "unnamed"}</strong>.
             </p>
 
             <table width="100%" cellpadding="0" cellspacing="0" style="background:#faf8f5;border-radius:8px;">
               <tr>
                 <td style="padding:12px 20px;border-bottom:1px solid #e8e2d9;">
+                  <strong style="color:#6b5d4f;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;">Owner</strong><br/>
+                  <span style="font-size:16px;color:#2c2419;">${ownerName || "Not provided"}</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:12px 20px;border-bottom:1px solid #e8e2d9;">
                   <strong style="color:#6b5d4f;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;">Email</strong><br/>
                   <a href="mailto:${email}" style="font-size:16px;color:#2d5a4a;">${email}</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:12px 20px;border-bottom:1px solid #e8e2d9;">
+                  <strong style="color:#6b5d4f;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;">Pet</strong><br/>
+                  <span style="font-size:16px;color:#2c2419;">${petName || "Not provided"} (${speciesLabels[species] || "Unknown"})</span>
                 </td>
               </tr>
               <tr>

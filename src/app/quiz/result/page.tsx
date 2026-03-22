@@ -3,7 +3,7 @@ import { DOSHA_RESULTS } from "@/lib/dosha-results";
 import type { DoshaType } from "@/lib/quiz-data";
 
 type Props = {
-  searchParams: Promise<{ d?: string }>;
+  searchParams: Promise<{ d?: string; pet?: string; owner?: string; species?: string }>;
 };
 
 function Section({ title, items }: { title: string; items: string[] }) {
@@ -24,12 +24,25 @@ function Section({ title, items }: { title: string; items: string[] }) {
   );
 }
 
+const SPECIES_LABELS: Record<string, string> = {
+  dog: "dog",
+  cat: "cat",
+  horse: "horse",
+  bird: "bird",
+  "pocket-pet": "pocket pet",
+};
+
 export default async function QuizResultPage({ searchParams }: Props) {
   const params = await searchParams;
   const d = (params.d ?? "vata").toLowerCase() as DoshaType;
   const dosha: DoshaType =
     d === "vata" || d === "pitta" || d === "kapha" ? d : "vata";
   const content = DOSHA_RESULTS[dosha];
+
+  const petName = params.pet || "your pet";
+  const ownerName = params.owner || "";
+  const species = params.species || "";
+  const speciesLabel = SPECIES_LABELS[species] || "pet";
 
   return (
     <>
@@ -71,26 +84,31 @@ export default async function QuizResultPage({ searchParams }: Props) {
         <article className="mt-10 rounded-[var(--radius-lg)] border-2 border-[var(--card-border)] bg-[var(--card)] p-6 shadow-[var(--shadow-lg)] sm:p-10">
           {/* Header */}
           <p className="text-sm font-medium uppercase tracking-wider text-[var(--primary)]">
-            Your pet&apos;s Dosha profile
+            {petName}&apos;s Dosha profile
           </p>
           <div className="mt-2 flex items-start gap-3">
             <span className="text-4xl" aria-hidden="true">{content.emoji}</span>
             <div>
               <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
-                {content.title}
+                {petName} is {content.title}
               </h1>
               <p className="mt-1 text-lg text-[var(--accent)]">{content.subtitle}</p>
             </div>
           </div>
-          <p className="mt-6 text-[var(--muted)]">{content.description}</p>
+          {ownerName && (
+            <p className="mt-4 text-[var(--foreground)]">
+              Hey {ownerName}, here&apos;s what we found about your {speciesLabel}!
+            </p>
+          )}
+          <p className="mt-4 text-[var(--muted)]">{content.description}</p>
 
           {/* Traits */}
-          <Section title="Typical traits" items={content.traits} />
+          <Section title={`${petName}'s typical traits`} items={content.traits} />
 
           {/* One care tip */}
           <section className="mt-8">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]">
-              Care tip for your {content.title.split(" ")[0]} pet
+              Care tip for {petName}
             </h2>
             <p className="mt-3 flex gap-2 text-[var(--muted)]">
               <span className="mt-0.5 shrink-0 text-[var(--primary)]">✓</span>
@@ -122,10 +140,10 @@ export default async function QuizResultPage({ searchParams }: Props) {
         {/* Book upsell CTA */}
         <div className="mt-10 rounded-[var(--radius-lg)] border-2 border-[var(--primary)] bg-[var(--card)] p-6 text-center shadow-[var(--shadow)] sm:p-8">
           <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)] sm:text-2xl">
-            Want the full care guide for your {content.title.split(" ")[0]} pet?
+            Want the full care guide for {petName}?
           </h3>
           <p className="mx-auto mt-2 max-w-md text-[var(--muted)]">
-            Our book covers personalised massage routines, diet &amp; nutrition, herbal support, lifestyle tips, and signs of imbalance — all tailored to your pet&apos;s Dosha.
+            Our book covers personalised massage routines, diet &amp; nutrition, herbal support, lifestyle tips, and more — all tailored to your {speciesLabel}&apos;s Dosha.
           </p>
           <Link
             href="/pre-order"

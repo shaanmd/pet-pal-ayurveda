@@ -7,7 +7,7 @@ import type { DoshaType } from "@/lib/quiz-data";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { email, primaryDosha, vataScore, pittaScore, kaphaScore } = body;
+    const { email, ownerName, petName, species, primaryDosha, vataScore, pittaScore, kaphaScore } = body;
 
     if (!email || !primaryDosha) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -31,9 +31,12 @@ export async function POST(req: Request) {
       getResend().emails.send({
         from: FROM_EMAIL,
         to: ADMIN_EMAIL,
-        subject: `Dosha Quiz: ${email} — ${primaryDosha.charAt(0).toUpperCase() + primaryDosha.slice(1)}`,
+        subject: `Dosha Quiz: ${petName || "Pet"} (${species || "unknown"}) — ${primaryDosha.charAt(0).toUpperCase() + primaryDosha.slice(1)}`,
         html: quizResultNotificationHtml({
           email,
+          ownerName: ownerName ?? "",
+          petName: petName ?? "",
+          species: species ?? "",
           primaryDosha,
           ...scores,
         }),
