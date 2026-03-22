@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Karla } from "next/font/google";
+import { CookieConsent } from "@/components/CookieConsent";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${karla.variable}`}>
       <body className="antialiased">
         {children}
+        <CookieConsent gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );
