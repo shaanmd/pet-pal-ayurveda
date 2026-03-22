@@ -22,21 +22,21 @@ export async function POST(req: Request) {
 
     // Verify webhook signature if secret is configured
     // TODO: Re-enable signature verification after testing
-    const webhookSecret = process.env.SQUARE_WEBHOOK_SIGNATURE_KEY;
-    if (false && webhookSecret) {
-      const expectedSignature = crypto
-        .createHmac("sha256", webhookSecret)
-        .update(
-          // Square signs: webhook_url + body
-          (process.env.SQUARE_WEBHOOK_URL ?? "") + body
-        )
-        .digest("base64");
-
-      if (signature !== expectedSignature) {
-        console.error("Square webhook signature mismatch");
-        return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
-      }
-    }
+    // const webhookSecret = process.env.SQUARE_WEBHOOK_SIGNATURE_KEY;
+    // if (webhookSecret) {
+    //   const expectedSignature = crypto
+    //     .createHmac("sha256", webhookSecret)
+    //     .update(
+    //       // Square signs: webhook_url + body
+    //       (process.env.SQUARE_WEBHOOK_URL ?? "") + body
+    //     )
+    //     .digest("base64");
+    //
+    //   if (signature !== expectedSignature) {
+    //     console.error("Square webhook signature mismatch");
+    //     return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
+    //   }
+    // }
 
     const event = JSON.parse(body);
 
