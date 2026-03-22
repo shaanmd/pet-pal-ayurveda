@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <circle cx="16" cy="16" r="16" fill="#2d5a4a"/>
+  <g transform="translate(8, 6)" fill="#8fb89a" stroke="#8fb89a" stroke-width="0.5" stroke-linejoin="round">
+    <!-- Main leaf -->
+    <path d="M8 2 C4 5, 2 10, 3 16 C4 13, 6 10, 8 8 C10 10, 12 13, 13 16 C14 10, 12 5, 8 2Z" fill="#a8d5a2" stroke="none"/>
+    <!-- Stem -->
+    <path d="M8 8 C7.5 12, 7 16, 8 20" fill="none" stroke="#5c8a5e" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Left vein -->
+    <path d="M8 10 C6.5 9, 5 8.5, 4 9" fill="none" stroke="#5c8a5e" stroke-width="0.7" stroke-linecap="round"/>
+    <!-- Right vein -->
+    <path d="M8 10 C9.5 9, 11 8.5, 12 9" fill="none" stroke="#5c8a5e" stroke-width="0.7" stroke-linecap="round"/>
+    <!-- Small left leaf -->
+    <path d="M7 14 C5 12, 3 12, 2 13 C3 14, 5 14, 7 14Z" fill="#8fb89a" stroke="none"/>
+    <!-- Small right leaf -->
+    <path d="M9 12 C11 10, 13 10, 14 11 C13 12, 11 12, 9 12Z" fill="#8fb89a" stroke="none"/>
+  </g>
+</svg>
