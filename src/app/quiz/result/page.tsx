@@ -87,46 +87,16 @@ export default async function QuizResultPage({ searchParams }: Props) {
           {/* Traits */}
           <Section title="Typical traits" items={content.traits} />
 
-          {/* Massage */}
-          <Section title="Ayurvedic massage guide" items={content.massageTips} />
-
-          {/* Diet */}
-          <Section title="Diet & nutrition tips" items={content.dietTips} />
-
-          {/* Herbs */}
-          <Section title="Supportive herbs (vet-approved use only)" items={content.herbTips} />
-
-          {/* Lifestyle */}
-          <Section title="Lifestyle & routine" items={content.lifestyleTips} />
-
-          {/* Imbalances */}
-          <section className="mt-8 rounded-[var(--radius)] border border-[var(--card-border)] bg-[var(--background)] p-4">
-            <h2 className="font-[family-name:var(--font-display)] text-base font-semibold text-[var(--foreground)]">
-              Signs of imbalance to watch for
+          {/* One care tip */}
+          <section className="mt-8">
+            <h2 className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]">
+              Care tip for your {content.title.split(" ")[0]} pet
             </h2>
-            <ul className="mt-3 space-y-1">
-              {content.commonImbalances.map((item, i) => (
-                <li key={i} className="flex gap-2 text-sm text-[var(--muted)]">
-                  <span className="mt-0.5 shrink-0 text-orange-400">⚠</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          {/* PDF download */}
-          {content.pdfUrl && (
-            <p className="mt-8">
-              <a
-                href={content.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center font-medium text-[var(--primary)] hover:underline"
-              >
-                Download your Dosha Guide PDF →
-              </a>
+            <p className="mt-3 flex gap-2 text-[var(--muted)]">
+              <span className="mt-0.5 shrink-0 text-[var(--primary)]">✓</span>
+              <span>{content.massageTips[0]}</span>
             </p>
-          )}
+          </section>
 
           <p className="mt-10 text-sm text-[var(--muted)]">
             Check your inbox — we&apos;ll share more about our upcoming book and
@@ -134,18 +104,28 @@ export default async function QuizResultPage({ searchParams }: Props) {
           </p>
         </article>
 
-        <div className="mt-10 text-center">
+        {/* Book upsell CTA */}
+        <div className="mt-10 rounded-[var(--radius-lg)] border-2 border-[var(--primary)] bg-[var(--card)] p-6 text-center shadow-[var(--shadow)] sm:p-8">
+          <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)] sm:text-2xl">
+            Want the full care guide for your {content.title.split(" ")[0]} pet?
+          </h3>
+          <p className="mx-auto mt-2 max-w-md text-[var(--muted)]">
+            Our book covers personalised massage routines, diet &amp; nutrition, herbal support, lifestyle tips, and signs of imbalance — all tailored to your pet&apos;s Dosha.
+          </p>
+          <Link
+            href="/pre-order"
+            className="mt-6 inline-flex h-12 items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-8 font-semibold text-[var(--primary-foreground)] shadow-[var(--shadow)] transition hover:opacity-90"
+          >
+            Pre-order the Book
+          </Link>
+        </div>
+
+        <div className="mt-8 text-center">
           <Link
             href="/quiz"
-            className="mr-4 text-sm font-medium text-[var(--primary)] hover:underline"
+            className="text-sm font-medium text-[var(--primary)] hover:underline"
           >
             Retake the quiz
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex h-12 items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-6 font-semibold text-[var(--primary-foreground)] hover:opacity-95"
-          >
-            Return to PetPal Ayurveda
           </Link>
         </div>
       </div>
