@@ -39,10 +39,12 @@ export default async function QuizResultPage({ searchParams }: Props) {
     d === "vata" || d === "pitta" || d === "kapha" ? d : "vata";
   const content = DOSHA_RESULTS[dosha];
 
-  const petName = params.pet || "your pet";
+  const petName = params.pet || "Your pet";
   const ownerName = params.owner || "";
   const species = params.species || "";
   const speciesLabel = SPECIES_LABELS[species] || "pet";
+  // content.title is e.g. "Your pet is Kapha-dominant" — extract just "Kapha-dominant"
+  const doshaLabel = content.title.replace(/^Your pet is /i, "");
 
   return (
     <>
@@ -90,7 +92,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
             <span className="text-4xl" aria-hidden="true">{content.emoji}</span>
             <div>
               <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
-                {petName} is {content.title}
+                {petName} is {doshaLabel}
               </h1>
               <p className="mt-1 text-lg text-[var(--accent)]">{content.subtitle}</p>
             </div>
