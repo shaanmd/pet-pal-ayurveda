@@ -101,7 +101,7 @@ export const t = {
     eyebrow: { en: "Pre-order now", hi: "अभी प्री-ऑर्डर करें" },
     heading: { en: "Secure Your Copy Today", hi: "आज ही अपनी प्रति सुरक्षित करें" },
     sub: {
-      en: "The first Ayurvedic pet care guide written by veterinarians. Early supporters get the best price.",
+      en: "Early supporters get the best price.",
       hi: "पशु चिकित्सकों द्वारा लिखित पहली आयुर्वेदिक पेट केयर गाइड। शुरुआती समर्थकों को सबसे अच्छी कीमत मिलती है।",
     },
     videoPlaceholder: { en: "Book trailer coming soon", hi: "पुस्तक ट्रेलर जल्द आ रहा है" },
