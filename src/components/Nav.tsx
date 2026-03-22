@@ -33,9 +33,9 @@ export function Nav() {
           <a href="#experts" className="text-sm font-medium text-[var(--muted)] transition hover:text-[var(--foreground)]">
             {tx(t.nav.authors, lang)}
           </a>
-          <a href="#waitlist" className="text-sm font-medium text-[var(--muted)] transition hover:text-[var(--foreground)]">
+          <Link href="/pre-order" className="text-sm font-medium text-[var(--muted)] transition hover:text-[var(--foreground)]">
             {tx(t.nav.book, lang)}
-          </a>
+          </Link>
           <Link
             href="/quiz"
             className="inline-flex h-9 items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-4 text-sm font-semibold text-[var(--primary-foreground)] shadow-[var(--shadow)] transition hover:opacity-90"
@@ -86,9 +86,9 @@ export function Nav() {
             <a href="#experts" className="text-sm font-medium text-[var(--muted)]" onClick={() => setMenuOpen(false)}>
               {tx(t.nav.authors, lang)}
             </a>
-            <a href="#waitlist" className="text-sm font-medium text-[var(--muted)]" onClick={() => setMenuOpen(false)}>
+            <Link href="/pre-order" className="text-sm font-medium text-[var(--muted)]" onClick={() => setMenuOpen(false)}>
               {tx(t.nav.book, lang)}
-            </a>
+            </Link>
             <Link
               href="/quiz"
               className="inline-flex h-10 items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-4 text-sm font-semibold text-[var(--primary-foreground)]"

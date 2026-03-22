@@ -6,15 +6,25 @@ import { t, tx } from "@/lib/translations";
 
 export function WaitlistSection() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const { lang } = useLang();
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email) return;
-    // TODO: wire up to real endpoint (e.g. Supabase, Mailchimp, Resend)
-    setStatus("success");
-    setEmail("");
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "homepage" }),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -63,9 +73,10 @@ export function WaitlistSection() {
               />
               <button
                 type="submit"
-                className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-[var(--accent)] px-7 text-base font-semibold text-white shadow-lg transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--primary)] sm:w-auto"
+                disabled={status === "loading"}
+                className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-[var(--accent)] px-7 text-base font-semibold text-white shadow-lg transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--primary)] disabled:opacity-60 sm:w-auto"
               >
-                {tx(t.waitlist.cta, lang)}
+                {status === "loading" ? "..." : tx(t.waitlist.cta, lang)}
               </button>
             </form>
             {status === "error" && (

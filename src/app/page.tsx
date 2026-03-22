@@ -39,14 +39,17 @@ export default function Home() {
               <a href="#experts" className="transition hover:text-[var(--foreground)]">
                 Our experts
               </a>
-              <a href="#waitlist" className="transition hover:text-[var(--foreground)]">
+              <Link href="/pre-order" className="transition hover:text-[var(--foreground)]">
                 The book
-              </a>
+              </Link>
             </nav>
           </div>
 
           <div className="mt-8 border-t border-[var(--card-border)] pt-6 text-center text-xs text-[var(--muted)]">
-            © {new Date().getFullYear()} PetPal Ayurveda · petpalayurveda.com
+            © {new Date().getFullYear()} PetPal Ayurveda ·{" "}
+            <a href="https://petpalayurveda.com" className="underline transition hover:text-[var(--foreground)]">
+              petpalayurveda.com
+            </a>
           </div>
         </div>
       </footer>

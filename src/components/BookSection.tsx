@@ -45,12 +45,12 @@ export function BookSection() {
               ))}
             </ul>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:justify-start">
-              <a
-                href="#waitlist"
+              <Link
+                href="/pre-order"
                 className="inline-flex h-12 w-full items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-6 font-semibold text-[var(--primary-foreground)] shadow-[var(--shadow)] transition hover:opacity-90 sm:w-auto"
               >
                 {tx(t.book.cta1, lang)}
-              </a>
+              </Link>
               <Link
                 href="/quiz"
                 className="inline-flex h-12 w-full items-center justify-center rounded-[var(--radius)] border-2 border-[var(--card-border)] bg-[var(--card)] px-6 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)] sm:w-auto"
