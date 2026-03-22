@@ -38,14 +38,41 @@ export default function QuizPage() {
   }
 
   return (
+    <>
+      <header className="sticky top-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/90 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
+          >
+            <span
+              className="flex h-8 w-8 items-center justify-center rounded-full text-[var(--primary-foreground)]"
+              style={{ backgroundColor: "var(--primary)" }}
+              aria-hidden="true"
+            >
+              🌿
+            </span>
+            PetPal Ayurveda
+          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/pre-order"
+              className="inline-flex h-9 items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-4 text-sm font-semibold text-[var(--primary-foreground)] shadow-[var(--shadow)] transition hover:opacity-90"
+            >
+              Pre-order the Book
+            </Link>
+            <Link
+              href="/"
+              className="hidden text-sm font-medium text-[var(--primary)] hover:underline sm:inline"
+            >
+              Back to home
+            </Link>
+          </div>
+        </div>
+      </header>
+
     <main className="min-h-screen bg-[var(--background)] px-6 py-12 sm:px-8 md:px-12">
       <div className="mx-auto max-w-2xl">
-        <Link
-          href="/"
-          className="text-sm font-medium text-[var(--primary)] hover:underline"
-        >
-          ← Back to home
-        </Link>
         <div className="mt-8">
           <p className="text-sm font-medium text-[var(--muted)]">
             Question {step + 1} of {QUIZ_QUESTIONS.length}
@@ -86,6 +113,7 @@ export default function QuizPage() {
         )}
       </div>
     </main>
+    </>
   );
 }
 
@@ -126,6 +154,39 @@ function EmailCaptureStep({
   };
 
   return (
+    <>
+      <header className="sticky top-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/90 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
+          >
+            <span
+              className="flex h-8 w-8 items-center justify-center rounded-full text-[var(--primary-foreground)]"
+              style={{ backgroundColor: "var(--primary)" }}
+              aria-hidden="true"
+            >
+              🌿
+            </span>
+            PetPal Ayurveda
+          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/pre-order"
+              className="inline-flex h-9 items-center justify-center rounded-[var(--radius)] bg-[var(--primary)] px-4 text-sm font-semibold text-[var(--primary-foreground)] shadow-[var(--shadow)] transition hover:opacity-90"
+            >
+              Pre-order the Book
+            </Link>
+            <Link
+              href="/"
+              className="hidden text-sm font-medium text-[var(--primary)] hover:underline sm:inline"
+            >
+              Back to home
+            </Link>
+          </div>
+        </div>
+      </header>
+
     <main className="min-h-screen bg-[var(--background)] px-6 py-12 sm:px-8 md:px-12">
       <div className="mx-auto max-w-md">
         <button
@@ -173,5 +234,6 @@ function EmailCaptureStep({
         </div>
       </div>
     </main>
+    </>
   );
 }
